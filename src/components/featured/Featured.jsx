@@ -1,6 +1,12 @@
+import useFetch from "../../hooks/useFetch";
+import { BASE_URL } from "../../utils/baseUrl";
 import "./featured.css";
 
 const Featured = () => {
+
+  const {data,loading,error}=useFetch(BASE_URL+"/hotels/countByCity?cities=london,madrid,berlin")
+  console.log(data);
+  
   return (
     <div className="featured">
       <div className="featuredItem">
